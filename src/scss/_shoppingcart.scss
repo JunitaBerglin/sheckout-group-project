@@ -1,0 +1,99 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.shoppingcart-container {
+  background-color: white;
+  @include mix.flexCenter;
+  flex-direction: column;
+}
+
+.headingInCart {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    color: var.$color-secondary-dark;
+  }
+}
+
+.shoppingCartPage {
+  margin-top: 4px;
+  @include mix.flexCenter;
+  flex-wrap: wrap;
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+
+  @include mix.desktop {
+    width: 60%;
+  }
+}
+
+.productInCart {
+  @include mix.flexCenter;
+  flex-direction: column;
+  background-color: var.$product-background;
+  width: 70%;
+  padding: 20px;
+  margin: 2px;
+  color: black;
+
+  &__image {
+    width: 100px;
+  }
+
+  &__title {
+    margin-top: 15px;
+    margin-bottom: 5;
+    font-family: var.$text-secondary;
+    // color: rgb(222, 72, 94);
+  }
+
+  &__price {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__amount {
+    @include mix.productAmount;
+  }
+
+  &__buttonMinus,
+  &__buttonPlus {
+    @include mix.amountButtons;
+  }
+
+  &__buttonClear,
+  &__buttonCheckout {
+    @include mix.buttons;
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
+  }
+}
+
+.productInCartButtonContainer {
+  display: flex;
+  column-gap: 10px;
+}
+
+.productsTotalContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.productsClearContainer {
+  margin-bottom: 20px;
+  width: max-content;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  column-gap: 20px;
+}
+
+.productTotalText {
+  color: black;
+}

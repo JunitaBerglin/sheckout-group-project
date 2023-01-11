@@ -1,0 +1,142 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.productdetailspage-container {
+  background-color: white;
+}
+
+.productdetailpage-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: var.$color-secondary-dark;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.productdetailpage {
+  width: 60%;
+  margin-bottom: 70px;
+  display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
+  min-height: 73vh;
+
+  @include mix.desktop {
+    min-height: 70vh;
+  }
+}
+
+.productdetail {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  margin: 30px;
+  margin-bottom: 15px;
+
+  @include mix.desktop {
+    flex-direction: row;
+    width: 40%;
+    margin: 2px 30px 30px 30px;
+  }
+
+  &__containerOfImg {
+    flex-direction: column;
+    width: 200px;
+    margin-right: 10px;
+
+    @include mix.desktop {
+      margin-top: 35px;
+      width: 600px;
+    }
+  }
+
+  &__containerOfInfo {
+    flex-direction: column;
+    margin-left: 30px;
+
+    @include mix.desktop {
+      margin-top: 150px;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 160px;
+    padding: 10px;
+    background-color: var.$product-background;
+    cursor: pointer;
+    margin-left: 15px;
+
+    &:hover {
+      background-color: rgba(238, 238, 238, 0.702);
+    }
+
+    @include mix.desktop {
+      width: 370px;
+    }
+  }
+
+  &__paragraph {
+    width: 90%;
+    font-size: 12px;
+    color: grey;
+    border-bottom: 1px solid black;
+    padding-bottom: 30px;
+
+    @include mix.desktop {
+      scale: 1.4;
+      align-self: flex-end;
+      margin-bottom: 20px;
+      margin-left: 80px;
+      border-bottom: 1px solid black;
+    }
+  }
+
+  &__title {
+    width: 90%;
+    font-family: var.$text-secondary;
+    margin-bottom: 5;
+    color: black;
+
+    @include mix.desktop {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      scale: 1.4;
+      padding-top: 25px;
+      align-self: flex-end;
+      border-top: 1px solid black;
+      margin-left: 80px;
+    }
+  }
+
+  &__price {
+    margin-left: 50px;
+    margin-bottom: 12px;
+    color: black;
+
+    @include mix.desktop {
+      margin-top: 30px;
+      margin-bottom: 12px;
+      scale: 1.3;
+      margin-left: 64px;
+      color: black;
+    }
+  }
+
+  &__buttonAddToCart {
+    border-style: none;
+    padding: 3px 3px 3px 3px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(227, 95, 115);
+    cursor: pointer;
+    margin-left: 20px;
+
+    @include mix.desktop {
+      scale: 1;
+      margin-left: 40px;
+    }
+  }
+}

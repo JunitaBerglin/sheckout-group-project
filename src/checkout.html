@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="ts/checkout.ts" defer type="module"></script>
+    <!--ikoner bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <!-- Fontawesome icons -->
+    <script
+      src="https://kit.fontawesome.com/62ffc96575.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="./scss/main.scss" rel="stylesheet" />
+    <title>Betalningsportal</title>
+  </head>
+  <body>
+    <div class="phone-nav">
+      <a href="index.html"><h1>JULKUL</h1></a>
+      <a href="shoppingcart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+
+      <ul id="desktop-nav">
+        <li><a href="products.html">Produkter</a></li>
+        <li><a href="index.html#offer">Erbjudanden</a></li>
+        <li><a href="">Om oss</a></li>
+        <li><a href="">Kontakt</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <div class="container nav-container">
+          <input class="checkbox" type="checkbox" name="" id="" />
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+
+          <div class="menu-items">
+            <li><a href="products.html">Produkter</a></li>
+            <li><a href="index.html#offer">Erbjudanden</a></li>
+            <li><a href="">Om oss</a></li>
+            <li><a href="">Kontakt</a></li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="wrapper">
+        <div class="marquee">
+          <p>
+            FRI FRAKT GÄLLER FRAM TILL JULDAGEN - BESTÄLL INNAN DEN 25 - PASSA
+            PÅ ATT KÖPA NU
+          </p>
+        </div>
+      </div>
+      <div id="empty-basket">
+        <p>Din varukorg är tom!</p>
+      </div>
+      <div class="productsContainer"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__contact">
+        <h4>Julkul AB</h4>
+        <p>Adress: Julkulegatan 24</p>
+        <p>Tel: 0743 56 56 77</p>
+      </div>
+      <div class="footer__social">
+        <p><i class="bi bi-instagram"></i></p>
+        <p><i class="bi bi-twitter"></i></p>
+        <p><i class="bi bi-facebook"></i></p>
+      </div>
+    </footer>
+  </body>
+</html>

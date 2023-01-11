@@ -1,0 +1,293 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.productpage-container {
+  @include mix.flexCenter;
+  flex-direction: column;
+  background-color: white;
+  color: var.$color-secondary-dark;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.showDesktop {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 100v;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.hideDesktop {
+  filter: brightness(50%);
+}
+
+.assortment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+
+  &__heading {
+    font-family: var.$text-secondary;
+    margin-bottom: 0;
+    font-weight: bold;
+
+    @include mix.desktop {
+      margin-top: 40px;
+      font-size: 30px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 30px;
+
+    @include mix.desktop {
+      width: 60%;
+      font-size: 20px;
+    }
+  }
+
+  &__amount {
+    align-self: flex-start;
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    color: grey;
+
+    @include mix.desktop {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+  }
+
+  &__button {
+    margin-right: 33px;
+    border-style: none;
+    width: 100px;
+    height: 20px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+    color: black;
+    font-size: 15px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.amountAndButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.productsOnDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+.productpage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 43%;
+  margin: 2px;
+  margin-bottom: 15px;
+
+  @include mix.desktop {
+    width: 20%;
+    margin: 2px 30px 30px 30px;
+  }
+
+  &__image {
+    width: 100px;
+    padding: 20px;
+    background-color: var.$product-background;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(238, 238, 238, 0.702);
+    }
+
+    @include mix.desktop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: var.$text-secondary;
+    margin-right: 20px;
+    margin-bottom: 5;
+
+    @include mix.desktop {
+      scale: 1.2;
+      align-self: flex-start;
+      padding-left: 5px;
+    }
+  }
+
+  &__price {
+    margin-top: 0;
+    margin-right: 102px;
+    margin-bottom: 10px;
+
+    @include mix.desktop {
+      scale: 1.2;
+      align-self: flex-start;
+      margin-left: -6px;
+      padding-left: 5px;
+    }
+  }
+
+  &__buttonAddToCart {
+    margin-right: 33px;
+    border-style: none;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(227, 95, 115);
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(255, 119, 139);
+    }
+
+    @include mix.desktop {
+      scale: 1.2;
+      align-self: flex-start;
+      margin-left: 6px;
+    }
+  }
+}
+
+// FILTER
+
+.filter {
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(250, 253, 251);
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+  font-family: var.$text-secondary;
+
+  @include mix.desktop {
+    width: 30%;
+    height: 100vh;
+    border: 1px solid black;
+    overflow-y: scroll;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-left: 20px;
+    border-bottom: 1px solid black;
+  }
+
+  &__exitButton {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin-right: 20px;
+    background-color: white;
+    border: 1px solid grey;
+  }
+
+  &__filterButton,
+  &__clearButton {
+    border-style: none;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(227, 95, 115);
+    cursor: pointer;
+    width: 48%;
+    height: 40px;
+  }
+
+  &__buttonsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+.color {
+  display: block;
+  margin-left: 30px;
+
+  &__container {
+    display: flex;
+  }
+
+  &__checkbox {
+    width: 20px;
+  }
+
+  &__name {
+    font-size: 16px;
+    margin-left: 20px;
+
+    @include mix.desktop {
+      font-size: 13px;
+    }
+  }
+}
+
+.size {
+  margin-left: 30px;
+
+  &__container {
+    display: flex;
+  }
+
+  &__number {
+    margin-left: 20px;
+
+    @include mix.desktop {
+      font-size: 13px;
+    }
+  }
+
+  &__checkbox {
+    width: 20px;
+  }
+}
